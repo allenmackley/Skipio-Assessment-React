@@ -8,6 +8,7 @@ module ApplicationHelper
     end
   end
 
+  #TODO: Currently doesn't work with Skipio. Need to set the data type to application/json instead of application/x-www-form-encoded
   def curl_post url, form_data
     uri     = URI.parse(url)
     http    = Net::HTTP.new(uri.host, uri.port)

@@ -12,6 +12,7 @@ class App.Users
     contact_id   = $contact.val()
     contact_name = $contact.next().find('.sio-contact-name').text()
     SIO_ROOT     = "https://stage.skipio.com/api/v2/"
+    #Normally, the token would be fetched from the API service, but since it's already been provided for the assessment in this case, I just grabbed it off of the DOM. Normally I don't think it would be the best idea to store the token on the DOM because you never know what kind of malware might reside on the client's machine. Ideally, it wouldn't be handled on the client side. It would be possible to handle the token enirely on the server, construct the URL there, then send the reaquest to the Skipio API.
     token        = $title_h1.data('token')
     url          = "#{SIO_ROOT}messages?token=#{token}"
     data =

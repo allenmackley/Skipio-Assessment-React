@@ -1,13 +1,11 @@
 class User < ApplicationRecord
-  attr_accessor :sio_api_token
-
-  valid_email_regex = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
   validates :name, presence: true, allow_blank: false, length: {minimum: 2, maximum: 50}
-  validates :email, presence: true, allow_blank: false, format: { with: valid_email_regex }, uniqueness: {case_sensitive: false}
+  validates :email, presence: true, allow_blank: false, format: { with: VALID_EMAIL_REGEX }, uniqueness: {case_sensitive: false}
 
   @@SIO_ROOT      = "https://stage.skipio.com/api/v2/"
-  #I have this here for now because it's a demo and the token was provided. In a real life scenario the token would be unique to each user. Reads the token in from a file so that the file can be excluded from the GIT repo.
+  #Reads the token in from a file so that the file can be excluded from the GIT repo. I have this here for now because it's a demo and the token was provided. In a real life scenario the token would be unique to each user.
   @@SIO_API_TOKEN = File.read('skipio_token.txt')
 
   def get_token
@@ -27,7 +25,6 @@ class User < ApplicationRecord
 
   def send_sio_message message = "", sio_contact_id = nil
     sio_post_message = "#{@@SIO_ROOT}messages?token=#{@@SIO_API_TOKEN}"
-    Rails.logger.warn "CONTACT ID: #{sio_contact_id}, MESSAGE: #{message}"
     curl_post(sio_post_message,
       {
         "recipients" => [sio_contact_id],
