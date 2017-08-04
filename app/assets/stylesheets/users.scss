@@ -1,10 +1,54 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .sio-user-list {
   list-style-type: none;
   .sio-user-li {
     padding: 10px;
     background: lightgray;
+    .sio-user-a {
+      padding: 5px;
+      .sio-user-avatar {
+        width: 80px;
+        height: 80px;
+        img {
+          width: 100%;
+        }
+      }
+      .sio.user-name {
+
+      }
+    }
+  }
+}
+
+.sio-message-form {
+  .sio-message-text {
+    width: 400px;
+    height: 100px;
+  }
+  .sio-message-send {
+    
+  }
+}
+.sio-contact-list {
+  list-style-type: none;
+  .sio-contact-li {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    .sio-contact-id {
+      margin: 0 20px 0 0;
+    }
+    .sio-contact-info {
+      .sio-contact-avatar {
+        width: 80px;
+        height: 80px;
+        img {
+          width: 100%;
+        }
+      }
+      .sio.contact-name {
+
+      }
+    }
   }
 }

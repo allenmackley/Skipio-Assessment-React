@@ -3,7 +3,7 @@
 %h2 Users:
 %ul.sio-user-list
   %li.sio-user-li
-    = link_to user_path(@user.id) do
+    = link_to user_path(@user.id), class: 'sio-user-a' do
       .sio-user-avatar
         = image_tag @sio_data[:avatar_image_url]
       .sio-user-name

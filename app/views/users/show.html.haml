@@ -1,6 +1,22 @@
-- title = "#{@user.name}'s Contact List"
+- title = "Contact List for #{@user.name}"
 - provide(:title, title)
-%h1 title
-%h2 Contacts:
-%ul.sio-contact-list
-  = render 'users/contact', contacts: @sio_contacts
+%h1.sio-contact-list-title{data: {user_id: @user.id, token: @user.get_token}}
+  = title
+= link_to "Back to Users List", users_path
+%h2 Select a Contact:
+= form_tag("", method: "post", class: 'sio-message-form') do
+  %ul.sio-contact-list
+    - @sio_contacts.each_with_index do |contact, index|
+      %li.sio-contact-li
+        - checked = index == 0 ? true : false
+        = radio_button_tag 'contact', contact[:id], checked, class: 'sio-contact-id'
+        .sio-contact-info
+          .sio-contact-avatar
+            = image_tag contact[:avatar_url]
+          .sio-contact-name
+            = contact[:full_name]
+  = text_area_tag "message", "Sample SMS message", class: 'sio-message-text'
+  %br
+  = submit_tag "Send Message", class: 'sio-message-send'
+  %br
+  %ul.sio-message-log
