@@ -7,7 +7,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "user data should be valid" do
-    puts @user.inspect
+    # puts @user.inspect
     assert @user.valid?
   end
 

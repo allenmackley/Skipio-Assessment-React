@@ -1,0 +1,7 @@
+- contacts.each do |contact|
+  %li.sio-contact-li
+    = link_to contact[:url] do
+      .sio-contact-avatar
+        = image_tag contact[:avatar_url]
+      .sio-contact-name
+        = contact[:full_name]

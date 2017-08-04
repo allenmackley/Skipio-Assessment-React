@@ -1,0 +1,6 @@
+- title = "#{@user.name}'s Contact List"
+- provide(:title, title)
+%h1 title
+%h2 Contacts:
+%ul.sio-contact-list
+  = render 'users/contact', contacts: @sio_contacts
