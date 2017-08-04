@@ -1,0 +1,7 @@
+- provide(:title, @user.name)
+%h1 Skipio Assessment App
+%h2 Users:
+%ul.sio-user-list
+  %li.sio-user-li
+    = link_to user_path(@user.id) do
+      = @user.name
