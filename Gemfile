@@ -30,7 +30,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'mysql2'
 gem 'haml'
-gem "haml-rails"
+gem 'haml-rails'
+gem 'rails-controller-testing'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

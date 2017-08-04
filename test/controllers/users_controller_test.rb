@@ -10,16 +10,19 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should show user" do
+    get users_url @user.id
+    assert_response :success
+  end
+
   test "should successfully retrieve skipio data" do
     get users_url
     sio_data = @user.fetch_sio_data
-    # puts @user.inspect
     assert_not_empty sio_data, "Wasn't able to retrieve Skipio data for this user."
   end
 
   test "should successfully retrieve skipio contact list" do
     get users_url @user.id
-    assert true
     sio_contacts = @user.fetch_sio_contacts
     assert_not_empty sio_contacts, "Wasn't able to retrieve Skipio contact list for this user."
   end

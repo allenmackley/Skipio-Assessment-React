@@ -5,13 +5,13 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     get root_path
   end
 
-  test "header layout" do
-
-  end
-
-  test "footer layout" do
-
-  end
+  # test "header layout" do
+  #
+  # end
+  #
+  # test "footer layout" do
+  #
+  # end
 
   test "body layout" do
     assert_select "body" do
