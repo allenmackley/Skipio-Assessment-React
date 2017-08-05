@@ -4,12 +4,17 @@ class UsersController < ApplicationController
     #Since the demo only has one user, just grab the first one in the database
     @user = User.first
     @sio_data = @user.fetch_sio_data
-  end
-
-  def show
-    @user = User.find(params[:id])
     @sio_contacts = @user.fetch_sio_contacts
   end
+
+  def sio_send_sms
+
+  end
+
+  # def show
+  #   @user = User.find(params[:id])
+  #   @sio_contacts = @user.fetch_sio_contacts
+  # end
 
   # An alternate way to POST to the API using CURL from the server.
   # def sio_send_sms

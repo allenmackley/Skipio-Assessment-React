@@ -1,5 +1,28 @@
-- provide(:title, @user.name)
-= react_component "ContactList"
+- title = "Contact List for #{@user.name}"
+- provide(:title, title)
+
+%h1.sio-contact-list-title{data: {user_id: @user.id, token: @user.get_token}}
+  = title
+= link_to "Back to Users List", users_path
+%h2 Select a Contact:
+= form_tag("/users/sio_send_sms", remote: true, class: 'sio-message-form') do
+  %ul.sio-contact-list
+    - @sio_contacts.each_with_index do |contact, index|
+      %li.sio-contact-li
+        - checked = index == 0 ? true : false
+        = radio_button_tag 'contact', contact[:id], checked, class: 'sio-contact-id'
+        .sio-contact-info
+          .sio-contact-avatar
+            = image_tag contact[:avatar_url]
+          .sio-contact-name
+            = contact[:full_name]
+  = text_area_tag "message", "Sample SMS message", class: 'sio-message-text'
+  %br
+  = submit_tag "Send Message", class: 'sio-message-send'
+  %br
+  %ul.sio-message-log
+
+-# = react_component "ContactList"
 -# %h1 Skipio Assessment App
 -# %h2 Users:
 -# %ul.sio-user-list
