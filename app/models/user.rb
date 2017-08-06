@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :messages
-  
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
   validates :name, presence: true, allow_blank: false, length: {minimum: 2, maximum: 50}
@@ -22,7 +22,7 @@ class User < ApplicationRecord
 
   def fetch_sio_contacts
     sio_get_contacts = "#{@@SIO_ROOT}contacts?token=#{@@SIO_API_TOKEN}"
-    curl_get(sio_get_contacts).with_indifferent_access[:data]
+    curl_get(sio_get_contacts) #.with_indifferent_access[:data]
   end
 
   def send_sio_message message = "", sio_contact_id = nil
