@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :messages
+  
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
   validates :name, presence: true, allow_blank: false, length: {minimum: 2, maximum: 50}

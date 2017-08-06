@@ -2,7 +2,11 @@ class UsersController < ApplicationController
 
   def index
     #Since the demo only has one user, just grab the first one in the database
-    @user = User.first
+    @user = User.find(1)
+
+    @messages = Message.order('created_at ASC')
+    @message = Message.new
+
     @sio_data = @user.fetch_sio_data
     @sio_contacts = @user.fetch_sio_contacts
   end

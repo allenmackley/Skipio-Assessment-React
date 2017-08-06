@@ -1,0 +1,33 @@
+.sio-message-form {
+  .sio-message-text {
+    width: 400px;
+    height: 100px;
+  }
+  .sio-message-send {
+
+  }
+}
+.sio-contact-list {
+  list-style-type: none;
+  .sio-contact-li {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    .sio-contact-id {
+      margin: 0 20px 0 0;
+    }
+    .sio-contact-info {
+      .sio-contact-avatar {
+        width: 80px;
+        height: 80px;
+        img {
+          width: 100%;
+        }
+      }
+      .sio.contact-name {
+
+      }
+    }
+  }
+}

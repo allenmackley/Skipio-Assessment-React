@@ -1,0 +1,3 @@
+- @messages.each do |m|
+  - date = m.created_at.strftime("%Y:%m:%d-%I:%M%p")
+  %li= "#{date}: #{m.user.name}: #{m.text}"

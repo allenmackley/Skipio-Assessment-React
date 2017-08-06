@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   #
   # http://local.skipio.com
   #
-  root "users#index"
+  root "messages#index"
   # post "users/sio_send_sms" => "users#sio_send_sms"
-  resources :users, only: [:index]
+  # resources :users, only: [:index]
+  resources :messages, only: [:index, :create]
 end
