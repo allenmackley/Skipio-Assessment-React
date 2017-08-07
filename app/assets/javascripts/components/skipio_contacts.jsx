@@ -1,8 +1,8 @@
-var SkipioContacts = React.createClass({
-  render: function() {
+class SkipioContacts extends React.Component {
+  render() {
     return (
       <ul className="sio-contact-list">
-        {this.props.sio_contacts.map(function(sio_contact, i) {
+        {this.props.sio_contacts.map((sio_contact, i) => {
           return (
             <SkipioContact key={sio_contact.id} index={i} sio_contact={sio_contact} handleChange={this.props.handleChange}/>
           )
@@ -10,4 +10,4 @@ var SkipioContacts = React.createClass({
       </ul>
     )
   }
-});
+}

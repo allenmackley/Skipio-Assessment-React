@@ -1,5 +1,5 @@
-var SkipioContact = React.createClass({
-  render: function() {
+class SkipioContact extends React.Component {
+  render() {
     return (
       <label htmlFor={this.props.sio_contact.id}>
         <li className="sio-contact-li">
@@ -16,4 +16,4 @@ var SkipioContact = React.createClass({
       </label>
     )
   }
-});
+}
