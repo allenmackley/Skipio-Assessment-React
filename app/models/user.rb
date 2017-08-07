@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  include CustomCurl
+  include HTTParty
 
   has_many :messages
 
@@ -19,23 +19,26 @@ class User < ApplicationRecord
   #TODO: Ideally, this data would only be retrieved from Skipio once, or on some interval, and saved to our database. This way, loading is much faster, and we don't tax the Skipio servers.
   def fetch_sio_data
     sio_get_me = "#{@@SIO_ROOT}users/me?token=#{@@SIO_API_TOKEN}"
-    curl_get(sio_get_me).with_indifferent_access[:data]
+    HTTParty.get(sio_get_me)
   end
 
   def fetch_sio_contacts
     sio_get_contacts = "#{@@SIO_ROOT}contacts?token=#{@@SIO_API_TOKEN}"
-    curl_get(sio_get_contacts) #.with_indifferent_access[:data]
+    HTTParty.get(sio_get_contacts)
   end
 
   def send_sio_message message = "", sio_contact_id = nil
     sio_post_message = "#{@@SIO_ROOT}messages?token=#{@@SIO_API_TOKEN}"
-    curl_post(sio_post_message,
-      {
+    sio_contact_id = "contact-#{sio_contact_id}"
+    HTTParty.post(
+      sio_post_message,
+      :body => {
         "recipients" => [sio_contact_id],
         "message"    => {
           "body" => message
         }
-      }, 'application/json'
+      }.to_json,
+      :headers => { 'Content-Type' => 'application/json' }
     )
   end
 

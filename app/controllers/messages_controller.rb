@@ -13,8 +13,10 @@ class MessagesController < ApplicationController
   end
 
   def create
+    @user = User.find(message_params[:user_id])
     @message = Message.new(message_params)
     if @message.save
+      @user.send_sio_message @message.text, @message.skipio_contact_user_id
       render :json => @message
     else
       render :json => @message.errors, status: :unprocessable_entity
