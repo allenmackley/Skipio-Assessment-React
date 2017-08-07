@@ -28,11 +28,17 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#provides support for mysql
 gem 'mysql2'
+#provides support for HAML, an alternative to ERB
 gem 'haml'
 gem 'haml-rails'
+#necessary in order to test controllers
 gem 'rails-controller-testing'
+#adds support for React in Rails
 gem 'react-rails'
+#add the moment.js library for working with dates and times
+gem 'momentjs-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
