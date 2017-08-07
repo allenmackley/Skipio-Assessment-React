@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  user_id: 
-  skipio_contact_user_id: 
-  message: MyText
-
+  user_id: 1
+  skipio_contact_user_id: 173752b-cb0c-4602-bdd9-a802023358de
+  text: Message to Doug Call
 two:
-  user_id: 
-  skipio_contact_user_id: 
-  message: MyText
+  user_id: 1
+  skipio_contact_user_id: 00a08e17-b73f-446d-a3b7-17386be3d2e0
+  text: Message to Nathan

@@ -1,4 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 allen:
+  id: 1
   name: Allen Mackley
   email: allenmackley@gmail.com
