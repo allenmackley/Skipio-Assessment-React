@@ -1,4 +1,11 @@
-class Messages extends React.Component{
+import React from 'react'
+import ReactDOM from 'react-dom'
+// import WebpackerReact from 'webpacker-react'
+import MessageForm from './message_form'
+import { MessagesList } from './messages_list'
+import update from 'immutability-helper'
+
+export default class Messages extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
@@ -24,7 +31,7 @@ class Messages extends React.Component{
   }
   addNewMessage(message) {
     //pushes the message onto the messages without mutating the data
-    const messages = React.addons.update(this.state.messages, {$push: [message]});
+    const messages = update(this.state.messages, {$push: [message]});
     this.setState({
       messages: messages.sort(function(a, b){
         return new Date(b.created_at) - new Date(a.created_at)

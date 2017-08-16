@@ -35,10 +35,11 @@ gem 'haml'
 gem 'haml-rails'
 #necessary in order to test controllers
 gem 'rails-controller-testing'
-#adds support for React in Rails
-gem 'react-rails'
 #add the moment.js library for working with dates and times
 gem 'momentjs-rails'
+
+gem 'webpacker'
+gem 'webpacker-react'
 
 gem 'httparty'
 

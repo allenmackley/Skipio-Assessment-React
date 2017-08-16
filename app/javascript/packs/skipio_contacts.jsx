@@ -1,4 +1,7 @@
-class SkipioContacts extends React.Component {
+import React from 'react'
+import SkipioContact from './skipio_contact'
+
+export default class SkipioContacts extends React.Component {
   render() {
     return (
       <ul className="sio-contact-list">

@@ -2,25 +2,8 @@
 - provide(:title, title)
 %h1.sio-contact-list-title{data: {user_id: @user.id, token: @user.get_token}}
   = title
+
 = react_component 'Messages', user: @user, sio_contacts: @sio_contacts, messages: @messages
 
--# %h2 Select a Contact:
--# = form_for @message, :html => { :remote => true, :class => 'sio-message-form' } do |f|
--#   %ul.sio-contact-list
--#     - @sio_contacts.each_with_index do |contact, index|
--#       %li.sio-contact-li
--#         - checked = index == 0 ? true : false
--#         = f.radio_button :skipio_contact_user_id, contact[:id], checked: checked, class: 'sio-contact-id'
--#         .sio-contact-info
--#           .sio-contact-avatar
--#             = image_tag contact[:avatar_url]
--#           .sio-contact-name
--#             = contact[:full_name]
--#   = f.label "Send a message:"
--#   = f.hidden_field :user_id, value: @user.id
--#   %br
--#   = f.text_area :text, class: 'sio-message-text'
--#   %br
--#   = f.submit "Send Message"
--# %ul.sio-message-history
--#   = render 'messages/messages'
+= javascript_pack_tag 'application'
+-# = stylesheet_pack_tag 'hello_react'

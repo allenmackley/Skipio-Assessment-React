@@ -1,4 +1,6 @@
-class SkipioContact extends React.Component {
+import React from 'react'
+
+export default class SkipioContact extends React.Component {
   render() {
     return (
       <label htmlFor={this.props.sio_contact.id}>

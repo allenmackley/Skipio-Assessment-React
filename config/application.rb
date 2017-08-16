@@ -13,8 +13,6 @@ module SkipioAssessment
 
     config.action_view.automatically_disable_submit_tag = false
 
-    config.react.addons = true
-
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths += %W(#{config.root}/lib/assets)
 

@@ -26,3 +26,5 @@
 /skipio_token.txt
 
 /passenger.3000.pid.lock
+/public/packs
+/node_modules

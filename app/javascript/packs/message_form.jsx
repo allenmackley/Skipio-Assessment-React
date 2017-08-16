@@ -1,6 +1,9 @@
-class MessageForm extends React.Component {
+import React from 'react'
+import SkipioContacts from './skipio_contacts'
+
+export default class MessageForm extends React.Component {
   handleChange(e) {
-    var obj = {}
+    const obj = {}
     obj[e.target.name] = e.target.value;
     this.props.onUserInput(obj);
   }

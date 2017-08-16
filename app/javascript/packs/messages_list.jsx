@@ -1,4 +1,7 @@
-const MessagesList = ({messages}) =>
+import React from 'react'
+import { Message } from './message'
+
+export const MessagesList = ({messages}) =>
   <ul>
     {messages.map((message, i) => {
       return (

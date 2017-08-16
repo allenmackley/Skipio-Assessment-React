@@ -1,0 +1,11 @@
+{
+  "application.js": "/packs-test/application.js",
+  "hello_react.js": "/packs-test/hello_react.js",
+  "message.js": "/packs-test/message.js",
+  "message_form.js": "/packs-test/message_form.js",
+  "messages.js": "/packs-test/messages.js",
+  "messages_list.js": "/packs-test/messages_list.js",
+  "skipio_contact.js": "/packs-test/skipio_contact.js",
+  "skipio_contacts.js": "/packs-test/skipio_contacts.js",
+  "utils.js": "/packs-test/utils.js"
+}
